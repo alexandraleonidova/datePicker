@@ -104,7 +104,6 @@
                                         <rect key="frame" x="144" y="581.5" width="32" height="30"/>
                                         <state key="normal" title="Next"/>
                                         <connections>
-                                            <action selector="nextButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B06-W1-Ixo"/>
                                             <segue destination="xBa-dQ-wWI" kind="show" identifier="mainScreenSegue" id="SiL-2S-6J1"/>
                                         </connections>
                                     </button>
@@ -166,7 +165,7 @@
                                                         </constraints>
                                                         <state key="normal" title="Active Life"/>
                                                         <connections>
-                                                            <segue destination="EGG-WF-sPL" kind="show" identifier="ActiveLifeSelected" id="2AB-z7-nig"/>
+                                                            <action selector="chooseSubCategoryButtonPressed:" destination="xBa-dQ-wWI" eventType="touchUpInside" id="fGq-Nr-zc6"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FvZ-b3-GIn">
@@ -177,7 +176,7 @@
                                                         </constraints>
                                                         <state key="normal" title="Arts"/>
                                                         <connections>
-                                                            <segue destination="EGG-WF-sPL" kind="show" identifier="ArtsSelected" id="gtN-cc-JVD"/>
+                                                            <action selector="chooseSubCategoryButtonPressed:" destination="xBa-dQ-wWI" eventType="touchUpInside" id="fh2-qL-TT2"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -193,7 +192,7 @@
                                                         </constraints>
                                                         <state key="normal" title="Entertainment"/>
                                                         <connections>
-                                                            <segue destination="EGG-WF-sPL" kind="show" identifier="EntertainmentSelected" id="qoz-XK-LCY"/>
+                                                            <action selector="chooseSubCategoryButtonPressed:" destination="xBa-dQ-wWI" eventType="touchUpInside" id="1uy-nF-lXM"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNf-Qj-6r3">
@@ -204,7 +203,7 @@
                                                         </constraints>
                                                         <state key="normal" title="Beauty &amp; Spa"/>
                                                         <connections>
-                                                            <segue destination="EGG-WF-sPL" kind="show" identifier="BeautyAndSpaSelected" id="GRR-Vp-uGs"/>
+                                                            <action selector="chooseSubCategoryButtonPressed:" destination="xBa-dQ-wWI" eventType="touchUpInside" id="s8B-sy-Mnh"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -236,7 +235,7 @@
                                                         </constraints>
                                                         <state key="normal" title="International"/>
                                                         <connections>
-                                                            <segue destination="EGG-WF-sPL" kind="show" identifier="internationalSelected" id="RzT-hG-8IU"/>
+                                                            <action selector="chooseSubCategoryButtonPressed:" destination="xBa-dQ-wWI" eventType="touchUpInside" id="hu1-9m-gpg"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKh-lB-T4Z">
@@ -247,7 +246,7 @@
                                                         </constraints>
                                                         <state key="normal" title="American"/>
                                                         <connections>
-                                                            <segue destination="EGG-WF-sPL" kind="show" identifier="americanSelected" id="JJW-Sq-0K1"/>
+                                                            <action selector="chooseSubCategoryButtonPressed:" destination="xBa-dQ-wWI" eventType="touchUpInside" id="BaT-RC-6ui"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -263,7 +262,7 @@
                                                         </constraints>
                                                         <state key="normal" title="Desserts &amp; Snacks"/>
                                                         <connections>
-                                                            <segue destination="EGG-WF-sPL" kind="show" identifier="dessertsAndSnacksSelected" id="cr7-Eo-wBM"/>
+                                                            <action selector="chooseSubCategoryButtonPressed:" destination="xBa-dQ-wWI" eventType="touchUpInside" id="24e-Tb-Ej4"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Mr-Rs-lMY">
@@ -274,7 +273,7 @@
                                                         </constraints>
                                                         <state key="normal" title="Other"/>
                                                         <connections>
-                                                            <segue destination="EGG-WF-sPL" kind="show" identifier="otherSelected" id="Qcy-hS-4SP"/>
+                                                            <action selector="chooseSubCategoryButtonPressed:" destination="xBa-dQ-wWI" eventType="touchUpInside" id="7uc-gZ-6R4"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -299,7 +298,7 @@
                                         </constraints>
                                         <state key="normal" title="Nightlife"/>
                                         <connections>
-                                            <segue destination="EGG-WF-sPL" kind="show" identifier="nightlifeButtonSlected" id="eMy-09-Lvw"/>
+                                            <action selector="chooseSubCategoryButtonPressed:" destination="xBa-dQ-wWI" eventType="touchUpInside" id="Oe1-gz-Ofg"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -317,17 +316,21 @@
                             <constraint firstItem="oLh-U6-rvp" firstAttribute="centerX" secondItem="9KC-hk-Q3S" secondAttribute="centerX" id="c8U-ME-hHZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ed6-kN-Xc6"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="R3d-ig-aQv"/>
-                                <exclude reference="oLh-U6-rvp"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
+                        <outlet property="activeLifeButton" destination="sjO-wK-sa3" id="CWK-pk-5WF"/>
                         <outlet property="activityStack" destination="R3d-ig-aQv" id="kfQ-pq-vlq"/>
+                        <outlet property="americanMealButton" destination="SKh-lB-T4Z" id="n2y-TC-msC"/>
+                        <outlet property="artsButton" destination="FvZ-b3-GIn" id="Thv-qQ-IML"/>
+                        <outlet property="beautyAndSpaButton" destination="QNf-Qj-6r3" id="PIx-Ry-EAZ"/>
+                        <outlet property="dessertsAndSnacksMealButton" destination="GN4-nh-B2q" id="orm-dg-i68"/>
+                        <outlet property="entertainmentButton" destination="QTl-6y-AJB" id="xXk-ca-adF"/>
+                        <outlet property="internationalMealButton" destination="ReG-pw-iCb" id="uM2-q1-SsU"/>
                         <outlet property="mealStack" destination="oLh-U6-rvp" id="Zc6-YU-LUV"/>
+                        <outlet property="nightlifeButton" destination="n7N-28-D3q" id="IO0-eB-c4U"/>
                         <outlet property="nightlifeStack" destination="rrQ-8O-lnN" id="gMA-do-4cR"/>
+                        <outlet property="otherMealButton" destination="3Mr-Rs-lMY" id="wyY-E0-Wmz"/>
+                        <segue destination="EGG-WF-sPL" kind="show" identifier="toSetDetailsSegue" id="Rdr-iF-ef1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nL1-Ul-XrZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -629,6 +632,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3QP-KU-SMH"/>
                     </view>
+                    <connections>
+                        <outlet property="firstInterestPicker" destination="TKh-W0-pDD" id="vJZ-QF-JFB"/>
+                        <outlet property="pricePicker" destination="tNd-Ck-5WX" id="imq-zM-o9r"/>
+                        <outlet property="secondInterestPicker" destination="qmP-Zq-6ZB" id="o8g-fJ-JIl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3pc-g1-9Mw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -656,7 +664,4 @@
     <resources>
         <image name="Unchecked" width="44" height="44"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="eMy-09-Lvw"/>
-    </inferredMetricsTieBreakers>
 </document>
