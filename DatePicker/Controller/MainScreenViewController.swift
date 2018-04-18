@@ -94,17 +94,23 @@ class MainScreenViewController: UIViewController, UIPickerViewDataSource, UIPick
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        guard firstMainCategoryPicked.count > 1 || secondMainCategoryPicked.count > 1 || thirdMainCategoryPicked.count > 1 else
+        { return }
+        
+        guard useCurrentLocationButton.isSelected || addressTextField.text?.count == 5 else
+        { return }
+        
         if segue.identifier == "mainScreenSegue" {
             let chooseCategoryViewController = segue.destination as! ChooseCategoryViewController
             
             var mainCategoriesArray: [String] = []
-            if firstMainCategoryPicked.count >= 2{
+            if firstMainCategoryPicked.count > 1{
                 mainCategoriesArray.append(firstMainCategoryPicked)
             }
-            if secondMainCategoryPicked.count >= 2{
+            if secondMainCategoryPicked.count > 1{
                 mainCategoriesArray.append(secondMainCategoryPicked)
             }
-            if thirdMainCategoryPicked.count >= 2{
+            if thirdMainCategoryPicked.count > 1{
                 mainCategoriesArray.append(thirdMainCategoryPicked)
             }
             
