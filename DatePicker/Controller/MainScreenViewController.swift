@@ -92,13 +92,15 @@ class MainScreenViewController: UIViewController, UIPickerViewDataSource, UIPick
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        //TODO: move this to block segue if parameters are bad
+        /*
         guard firstMainCategoryPicked.count > 1 || secondMainCategoryPicked.count > 1 || thirdMainCategoryPicked.count > 1 else
         { return }
         
         guard useCurrentLocationButton.isSelected || addressTextField.text?.count == 5 else
         { return }
+        */
         
         if segue.identifier == "mainScreenSegue" {
             let chooseCategoryViewController = segue.destination as! ChooseCategoryViewController
@@ -114,9 +116,12 @@ class MainScreenViewController: UIViewController, UIPickerViewDataSource, UIPick
                 mainCategoriesArray.append(thirdMainCategoryPicked)
             }
             
-            chooseCategoryViewController.mainCategories = mainCategoriesArray
-            chooseCategoryViewController.chooseCurrentLocation = useCurrentLocationButton.isSelected
-            chooseCategoryViewController.address = addressTextField.text ?? ""
+            //TODO: add address and geolocation when becomes applicable
+            let currDate = myDate(mainCategories: mainCategoriesArray, subCategories: [], dateItemsArray: [], geoLocationSet: useCurrentLocationButton.isSelected)
+            
+            chooseCategoryViewController.currDate = currDate
+            
+            //addressTextField.text ?? ""
             
         }
     }

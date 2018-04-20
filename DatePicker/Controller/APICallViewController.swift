@@ -10,9 +10,13 @@ import UIKit
 
 class APICallViewController: UIViewController {
     
+    var currDate: myDate?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("loaded APICallViewController")
 
+        print(currDate)
         // Do any additional setup after loading the view.
     }
 

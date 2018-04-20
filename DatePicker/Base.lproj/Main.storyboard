@@ -143,16 +143,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="R3d-ig-aQv">
-                                <rect key="frame" x="27.5" y="80" width="320" height="390.5"/>
+                                <rect key="frame" x="27.5" y="80" width="320" height="461"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Category:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uft-bn-ITK">
-                                        <rect key="frame" x="91" y="0.0" width="138" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Category for:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uft-bn-ITK">
+                                        <rect key="frame" x="78" y="0.0" width="164" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MBW-f7-QBk">
+                                        <rect key="frame" x="131.5" y="70.5" width="57" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aQE-0V-9hT">
-                                        <rect key="frame" x="0.0" y="70.5" width="320" height="320"/>
+                                        <rect key="frame" x="0.0" y="141" width="320" height="320"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MFp-8j-gEc">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
@@ -213,16 +219,22 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="oLh-U6-rvp">
-                                <rect key="frame" x="27" y="80" width="320" height="390.5"/>
+                                <rect key="frame" x="27" y="80" width="320" height="461"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Category:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2Y-iS-rEi">
-                                        <rect key="frame" x="91" y="0.0" width="138" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Category for:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2Y-iS-rEi">
+                                        <rect key="frame" x="78" y="0.0" width="164" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJT-B0-uRv">
+                                        <rect key="frame" x="141.5" y="70.5" width="37" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8kO-d9-7uC">
-                                        <rect key="frame" x="0.0" y="70.5" width="320" height="320"/>
+                                        <rect key="frame" x="0.0" y="141" width="320" height="320"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lHJ-9O-KQx">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
@@ -283,16 +295,22 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="rrQ-8O-lnN">
-                                <rect key="frame" x="16" y="80" width="343" height="413.5"/>
+                                <rect key="frame" x="16" y="80" width="343" height="484"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Category:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDD-qK-DUb">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Category for:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDD-qK-DUb">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nightlife" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IcJ-cP-WO1">
+                                        <rect key="frame" x="0.0" y="70.5" width="343" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n7N-28-D3q">
-                                        <rect key="frame" x="0.0" y="70.5" width="343" height="343"/>
+                                        <rect key="frame" x="0.0" y="141" width="343" height="343"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="n7N-28-D3q" secondAttribute="height" multiplier="1:1" id="oUo-GX-IqZ"/>
                                         </constraints>
@@ -587,13 +605,13 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TKh-W0-pDD">
+                                            <pickerView tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TKh-W0-pDD">
                                                 <rect key="frame" x="0.0" y="30.5" width="320" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="J2z-3N-rLN"/>
                                                 </constraints>
                                             </pickerView>
-                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qmP-Zq-6ZB">
+                                            <pickerView tag="5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qmP-Zq-6ZB">
                                                 <rect key="frame" x="0.0" y="80.5" width="320" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="pA1-cC-9ad"/>
@@ -610,7 +628,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tNd-Ck-5WX">
+                                            <pickerView tag="6" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tNd-Ck-5WX">
                                                 <rect key="frame" x="0.0" y="30.5" width="320" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="gK6-eH-jRW"/>
@@ -621,6 +639,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ym-QT-2Le">
                                         <rect key="frame" x="144" y="432.5" width="32" height="30"/>
                                         <state key="normal" title="Next"/>
+                                        <connections>
+                                            <action selector="nextButtonPressed:" destination="EGG-WF-sPL" eventType="touchUpInside" id="hqj-g4-XRA"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -634,11 +655,15 @@
                     </view>
                     <connections>
                         <outlet property="firstInterestPicker" destination="TKh-W0-pDD" id="vJZ-QF-JFB"/>
+                        <outlet property="mainCategoryLabel" destination="1km-jr-HYI" id="M8A-qb-fNb"/>
                         <outlet property="pricePicker" destination="tNd-Ck-5WX" id="imq-zM-o9r"/>
                         <outlet property="secondInterestPicker" destination="qmP-Zq-6ZB" id="o8g-fJ-JIl"/>
+                        <segue destination="2Nx-XV-BV5" kind="show" identifier="sendDetailsToAPI" id="TNe-ag-F4E"/>
+                        <segue destination="fZL-iX-oOl" kind="unwind" identifier="unwindToChooseCategory" unwindAction="unwindChooseCategoryWithUnwindSegue:" id="Lf2-91-fx8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3pc-g1-9Mw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="fZL-iX-oOl" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1864.8" y="128.18590704647679"/>
         </scene>

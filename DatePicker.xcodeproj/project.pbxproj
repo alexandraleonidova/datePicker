@@ -16,7 +16,7 @@
 		BBAE6CEE20869DD20053E1DE /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAE6CED20869DD20053E1DE /* MainScreenViewController.swift */; };
 		BBAE6CF02086B0530053E1DE /* ChooseCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAE6CEF2086B0530053E1DE /* ChooseCategoryViewController.swift */; };
 		BBAE6CF22087190F0053E1DE /* APICallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAE6CF12087190F0053E1DE /* APICallViewController.swift */; };
-		BBAE6CF42087193A0053E1DE /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAE6CF32087193A0053E1DE /* Date.swift */; };
+		BBAE6CF42087193A0053E1DE /* myDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAE6CF32087193A0053E1DE /* myDate.swift */; };
 		BBAE6CF6208719A20053E1DE /* DateItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAE6CF5208719A10053E1DE /* DateItem.swift */; };
 		BBAE6CFA20871D590053E1DE /* SetDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAE6CF920871D590053E1DE /* SetDetailsViewController.swift */; };
 		BBAE6CFC20871E850053E1DE /* OptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAE6CFB20871E850053E1DE /* OptionsTableViewController.swift */; };
@@ -34,7 +34,7 @@
 		BBAE6CED20869DD20053E1DE /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		BBAE6CEF2086B0530053E1DE /* ChooseCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCategoryViewController.swift; sourceTree = "<group>"; };
 		BBAE6CF12087190F0053E1DE /* APICallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICallViewController.swift; sourceTree = "<group>"; };
-		BBAE6CF32087193A0053E1DE /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		BBAE6CF32087193A0053E1DE /* myDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myDate.swift; sourceTree = "<group>"; };
 		BBAE6CF5208719A10053E1DE /* DateItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateItem.swift; sourceTree = "<group>"; };
 		BBAE6CF920871D590053E1DE /* SetDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetDetailsViewController.swift; sourceTree = "<group>"; };
 		BBAE6CFB20871E850053E1DE /* OptionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsTableViewController.swift; sourceTree = "<group>"; };
@@ -85,7 +85,7 @@
 		BBAE6CF720871CA90053E1DE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				BBAE6CF32087193A0053E1DE /* Date.swift */,
+				BBAE6CF32087193A0053E1DE /* myDate.swift */,
 				BBAE6CF5208719A10053E1DE /* DateItem.swift */,
 			);
 			path = Model;
@@ -179,7 +179,7 @@
 				BBAE6CFC20871E850053E1DE /* OptionsTableViewController.swift in Sources */,
 				BB1D4886207EAD6700E9498B /* ViewController.swift in Sources */,
 				BBAE6CF22087190F0053E1DE /* APICallViewController.swift in Sources */,
-				BBAE6CF42087193A0053E1DE /* Date.swift in Sources */,
+				BBAE6CF42087193A0053E1DE /* myDate.swift in Sources */,
 				BBAE6CEE20869DD20053E1DE /* MainScreenViewController.swift in Sources */,
 				BBAE6CFA20871D590053E1DE /* SetDetailsViewController.swift in Sources */,
 				BBAE6CF02086B0530053E1DE /* ChooseCategoryViewController.swift in Sources */,
@@ -323,10 +323,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = SH2HV3NZE5;
 				INFOPLIST_FILE = DatePicker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.DatePicker;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.DatePickerApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -338,10 +338,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = SH2HV3NZE5;
 				INFOPLIST_FILE = DatePicker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.DatePicker;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.DatePickerApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

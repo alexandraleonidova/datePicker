@@ -9,15 +9,32 @@
 import Foundation
 
 struct DateItem{
-    var category: String
-    var categoryKey: String
+    var firstCategory: String
+    //var firstCategoryKey: String?
     
-    var priceLevel: Int
+    var secondCategory: String?
+    //var secondCategoryKey: String?
     
-    var geoLocationSet: Bool
+    var priceLevel: String
+    var priceLevelInt: Int {
+        switch priceLevel{
+            case "$":
+                return 1
+            case "$$":
+                return 2
+            case "$$$":
+                return 3
+            case "$$$$":
+                return 0
+            default:
+                return -1
+        }
+    }
+    
+    //var geoLocationSet: Bool?
     
     //MAY BE ALL INTS?
-    var lattitude: String?
-    var longtitude: String?
-    var address: String?
+    //var lattitude: String?
+    //var longtitude: String?
+    //var address: String?
 }
