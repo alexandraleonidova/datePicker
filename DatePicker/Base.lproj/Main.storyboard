@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="W4o-y6-pZ4">
-                                <rect key="frame" x="27.5" y="28" width="320" height="611.5"/>
+                                <rect key="frame" x="27.5" y="33" width="320" height="601.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Picker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnP-1z-3s8">
                                         <rect key="frame" x="116.5" y="0.0" width="87.5" height="20.5"/>
@@ -58,22 +58,31 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZVM-gZ-pM5">
-                                        <rect key="frame" x="0.0" y="391" width="320" height="90.5"/>
+                                        <rect key="frame" x="0.0" y="391" width="320" height="80.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the starting address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S2u-lm-dtU">
-                                                <rect key="frame" x="0.0" y="0.0" width="198.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v8p-Uu-h4S">
-                                                <rect key="frame" x="0.0" y="30.5" width="320" height="30"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="9Nb-Rp-VDn">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="50.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the starting address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S2u-lm-dtU">
+                                                        <rect key="frame" x="0.0" y="0.0" width="198.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v8p-Uu-h4S">
+                                                        <rect key="frame" x="0.0" y="20.5" width="320" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="v8p-Uu-h4S" firstAttribute="leading" secondItem="9Nb-Rp-VDn" secondAttribute="leading" id="7OW-Vz-SPz"/>
+                                                    <constraint firstAttribute="trailing" secondItem="v8p-Uu-h4S" secondAttribute="trailing" id="nMK-ra-E63"/>
+                                                </constraints>
+                                            </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="yG4-a3-uQT">
-                                                <rect key="frame" x="0.0" y="70.5" width="207.5" height="20"/>
+                                                <rect key="frame" x="0.0" y="60.5" width="207.5" height="20"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jye-cp-4Pl">
                                                         <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -96,12 +105,12 @@
                                             </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="v8p-Uu-h4S" firstAttribute="leading" secondItem="ZVM-gZ-pM5" secondAttribute="leading" id="jmd-Aj-vch"/>
-                                            <constraint firstAttribute="trailing" secondItem="v8p-Uu-h4S" secondAttribute="trailing" id="tun-Vt-esB"/>
+                                            <constraint firstItem="9Nb-Rp-VDn" firstAttribute="leading" secondItem="ZVM-gZ-pM5" secondAttribute="leading" id="S3d-2T-Mck"/>
+                                            <constraint firstAttribute="trailing" secondItem="9Nb-Rp-VDn" secondAttribute="trailing" id="YH2-vc-hET"/>
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnu-ca-llT">
-                                        <rect key="frame" x="144" y="581.5" width="32" height="30"/>
+                                        <rect key="frame" x="144" y="571.5" width="32" height="30"/>
                                         <state key="normal" title="Next"/>
                                         <connections>
                                             <segue destination="xBa-dQ-wWI" kind="show" identifier="mainScreenSegue" id="SiL-2S-6J1"/>
@@ -124,6 +133,7 @@
                     <navigationItem key="navigationItem" id="zrr-jN-mtP"/>
                     <connections>
                         <outlet property="addressTextField" destination="v8p-Uu-h4S" id="lCh-Gs-o0w"/>
+                        <outlet property="enterAddressStack" destination="9Nb-Rp-VDn" id="b3s-gl-STn"/>
                         <outlet property="firstSelectionPicker" destination="62C-uu-s7F" id="ucQ-wi-RPH"/>
                         <outlet property="secondSelectionPicker" destination="jWL-ai-yHB" id="kwE-iV-zd6"/>
                         <outlet property="thirdSelectionPicker" destination="3bm-BV-NK7" id="wVC-mM-zrs"/>

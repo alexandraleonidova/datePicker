@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import CoreLocation
 
-class MainScreenViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class MainScreenViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, CLLocationManagerDelegate {
     
+    @IBOutlet weak var enterAddressStack: UIStackView!
     @IBOutlet weak var firstSelectionPicker: UIPickerView!
     @IBOutlet weak var thirdSelectionPicker: UIPickerView!
     @IBOutlet weak var secondSelectionPicker: UIPickerView!
@@ -19,18 +21,36 @@ class MainScreenViewController: UIViewController, UIPickerViewDataSource, UIPick
     @IBOutlet weak var useCurrentLocationButton: UIButton!
     
     @IBAction func useCurrentLocationButtonPressed(_ sender: UIButton) {
+        if !locationPermitted{
+            requestLocationAccess()
+            locationPermitted = true
+        }
+
         useCurrentLocationButton.isSelected = !useCurrentLocationButton.isSelected
         
         if useCurrentLocationButton.isSelected{
             let image = UIImage(named: "Checked")
             useCurrentLocationButton.setBackgroundImage(image, for: .normal)
+            if !geoCoordinatesSet {
+                guard let locValue: CLLocationCoordinate2D = locationManager.location?.coordinate else { return }
+                lattitude = Double(locValue.latitude)
+                longtitute = Double(locValue.longitude)
+            }
         } else {
             let image = UIImage(named: "Unchecked")
             useCurrentLocationButton.setBackgroundImage(image, for: .normal)
         }
+        enterAddressStack.isHidden = !enterAddressStack.isHidden
+        
     }
     
     let mainCategories = ["-", "Activity", "Meal", "Nightlife"]
+    
+    var locationPermitted = false
+    var geoCoordinatesSet = false
+    var locationManager = CLLocationManager();
+    var lattitude: Double?
+    var longtitute: Double?
     
     //picker view related data and functions
     // Tag 1 is First Picker
@@ -85,8 +105,31 @@ class MainScreenViewController: UIViewController, UIPickerViewDataSource, UIPick
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
+    func requestLocationAccess() {
+        let status = CLLocationManager.authorizationStatus()
+        
+        switch status {
+        case .authorizedAlways, .authorizedWhenInUse:
+            return
+        case .denied, .restricted:
+            print("location access denied")
+        default:
+            locationManager.requestAlwaysAuthorization()
+            locationManager.requestWhenInUseAuthorization()
+        }
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+    }
     
     // MARK: - Navigation
 
@@ -117,12 +160,9 @@ class MainScreenViewController: UIViewController, UIPickerViewDataSource, UIPick
             }
             
             //TODO: add address and geolocation when becomes applicable
-            let currDate = myDate(mainCategories: mainCategoriesArray, subCategories: [], dateItemsArray: [], geoLocationSet: useCurrentLocationButton.isSelected)
+            let currDate = myDate(mainCategories: mainCategoriesArray, subCategories: [], dateItemsArray: [], geoLocationSet: useCurrentLocationButton.isSelected, lattitude: lattitude, longtitude: longtitute, address: addressTextField.text)
             
             chooseCategoryViewController.currDate = currDate
-            
-            //addressTextField.text ?? ""
-            
         }
     }
     
