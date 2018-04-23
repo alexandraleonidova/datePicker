@@ -10,6 +10,9 @@ import UIKit
 
 class SetDetailsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
+    @IBOutlet weak var loadingLabel: UILabel!
+    @IBOutlet weak var DetailsStack: UIStackView!
+    
     @IBOutlet weak var mainCategoryLabel: UILabel!
     
     @IBOutlet weak var firstInterestPicker: UIPickerView!
@@ -226,6 +229,8 @@ class SetDetailsViewController: UIViewController, UIPickerViewDataSource, UIPick
         
         //check if you need to perform segue to API call or unwind
         if currDate?.dateItemsArray.count == currDate?.mainCategories.count{
+            loadingLabel.isHidden = false
+            DetailsStack.isHidden = true
             //perform sendDetailsToAPI segue
             performSegue(withIdentifier: "sendDetailsToAPI", sender: self)
         }
@@ -294,7 +299,9 @@ class SetDetailsViewController: UIViewController, UIPickerViewDataSource, UIPick
         guard currDate != nil else {
             fatalError("Didnt recieve currDate at SetDetailsViewController")
         }
-        print("loaded SetDetailsViewController")
+        
+        loadingLabel.isHidden = true
+        
         mainCategoryLabel.text = currDate?.mainCategories[(currDate?.dateItemsArray.count)!]
 
         // Do any additional setup after loading the view.
@@ -324,6 +331,8 @@ class SetDetailsViewController: UIViewController, UIPickerViewDataSource, UIPick
             guard currDate != nil else {
                 fatalError("no currDate avaliable at SetDetailsViewController to pass to APICallViewController")
             }
+            loadingLabel.isHidden = false
+            DetailsStack.isHidden = true
             let apiCallViewController = segue.destination as! APICallViewController
             apiCallViewController.currDate = currDate
         }

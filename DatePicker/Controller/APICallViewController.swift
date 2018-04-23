@@ -202,8 +202,8 @@ class APICallViewController: UIViewController {
       
         //set either geolocation or address
         if (currDate?.geoLocationSet)!{
-            query["latitude"] = String(describing: currDate?.lattitude)
-            query["longitude"] = String(describing: currDate?.longtitude)
+            query["latitude"] = String(describing: currDate!.lattitude)
+            query["longitude"] = String(describing: currDate!.longtitude)
         } else {
             query["location"] = currDate?.address
         }
@@ -315,7 +315,8 @@ class APICallViewController: UIViewController {
         // Pass the selected object to the new view controller.
         
         if segue.identifier == "APIDoneSegue" {
-            let optionsTableViewController = segue.destination as! OptionsTableViewController
+            let destinationNavigationController = segue.destination
+            let optionsTableViewController = destinationNavigationController.childViewControllers[0] as! OptionsTableViewController
             optionsTableViewController.currDate = currDate
             optionsTableViewController.currSuggestedDate = currSuggestedDate
         }

@@ -13,6 +13,7 @@
 		BB1D4889207EAD6700E9498B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB1D4887207EAD6700E9498B /* Main.storyboard */; };
 		BB1D488B207EAD6700E9498B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB1D488A207EAD6700E9498B /* Assets.xcassets */; };
 		BB1D488E207EAD6700E9498B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB1D488C207EAD6700E9498B /* LaunchScreen.storyboard */; };
+		BB29D1A1208E57E4005E214B /* DateDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB29D1A0208E57E4005E214B /* DateDetailsTableViewController.swift */; };
 		BB46C844208AB5230041C85D /* URL+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB46C843208AB5230041C85D /* URL+Helpers.swift */; };
 		BB46C846208AB58D0041C85D /* YelpAPIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB46C845208AB58D0041C85D /* YelpAPIController.swift */; };
 		BB46C848208C387B0041C85D /* YelpBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB46C847208C387B0041C85D /* YelpBusiness.swift */; };
@@ -35,6 +36,7 @@
 		BB1D488A207EAD6700E9498B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB1D488D207EAD6700E9498B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB1D488F207EAD6700E9498B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB29D1A0208E57E4005E214B /* DateDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateDetailsTableViewController.swift; sourceTree = "<group>"; };
 		BB46C843208AB5230041C85D /* URL+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Helpers.swift"; sourceTree = "<group>"; };
 		BB46C845208AB58D0041C85D /* YelpAPIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpAPIController.swift; sourceTree = "<group>"; };
 		BB46C847208C387B0041C85D /* YelpBusiness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpBusiness.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				BBAE6CF920871D590053E1DE /* SetDetailsViewController.swift */,
 				BBAE6CF12087190F0053E1DE /* APICallViewController.swift */,
 				BBAE6CFB20871E850053E1DE /* OptionsTableViewController.swift */,
+				BB29D1A0208E57E4005E214B /* DateDetailsTableViewController.swift */,
 				926684982085217E00383E72 /* FinalSelectionTableViewCell.swift */,
 			);
 			path = Controller;
@@ -191,6 +194,7 @@
 				BBAE6CFC20871E850053E1DE /* OptionsTableViewController.swift in Sources */,
 				BB1D4886207EAD6700E9498B /* ViewController.swift in Sources */,
 				BBAE6CF22087190F0053E1DE /* APICallViewController.swift in Sources */,
+				BB29D1A1208E57E4005E214B /* DateDetailsTableViewController.swift in Sources */,
 				BBAE6CF42087193A0053E1DE /* myDate.swift in Sources */,
 				BBAE6CEE20869DD20053E1DE /* MainScreenViewController.swift in Sources */,
 				BB46C84A208C4C450041C85D /* SuggestedDate.swift in Sources */,

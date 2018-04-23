@@ -32,9 +32,10 @@ class MainScreenViewController: UIViewController, UIPickerViewDataSource, UIPick
             let image = UIImage(named: "Checked")
             useCurrentLocationButton.setBackgroundImage(image, for: .normal)
             if !geoCoordinatesSet {
-                guard let locValue: CLLocationCoordinate2D = locationManager.location?.coordinate else { return }
-                lattitude = String(locValue.latitude)
-                longtitute = String(locValue.longitude)
+                if let locValue: CLLocationCoordinate2D = locationManager.location!.coordinate{
+                    lattitude = String(locValue.latitude)
+                    longtitute = String(locValue.longitude)
+                }
             }
         } else {
             let image = UIImage(named: "Unchecked")
