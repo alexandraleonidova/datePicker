@@ -33,8 +33,8 @@ class MainScreenViewController: UIViewController, UIPickerViewDataSource, UIPick
             useCurrentLocationButton.setBackgroundImage(image, for: .normal)
             if !geoCoordinatesSet {
                 guard let locValue: CLLocationCoordinate2D = locationManager.location?.coordinate else { return }
-                lattitude = Double(locValue.latitude)
-                longtitute = Double(locValue.longitude)
+                lattitude = String(locValue.latitude)
+                longtitute = String(locValue.longitude)
             }
         } else {
             let image = UIImage(named: "Unchecked")
@@ -49,8 +49,8 @@ class MainScreenViewController: UIViewController, UIPickerViewDataSource, UIPick
     var locationPermitted = false
     var geoCoordinatesSet = false
     var locationManager = CLLocationManager();
-    var lattitude: Double?
-    var longtitute: Double?
+    var lattitude: String = ""
+    var longtitute: String = ""
     
     //picker view related data and functions
     // Tag 1 is First Picker

@@ -561,7 +561,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Loading..."/>
                                 <connections>
-                                    <segue destination="wtm-CM-JfM" kind="show" id="nNB-MY-gzg"/>
+                                    <segue destination="wtm-CM-JfM" kind="show" identifier="APIDoneSegue" id="nNB-MY-gzg"/>
                                 </connections>
                             </button>
                         </subviews>

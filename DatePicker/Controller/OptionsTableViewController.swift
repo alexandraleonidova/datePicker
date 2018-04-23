@@ -9,10 +9,17 @@
 import UIKit
 
 class OptionsTableViewController: UITableViewController {
+    
+    var currDate: myDate?
+    var currSuggestedDate: SuggestedDate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        guard currDate != nil, currSuggestedDate != nil else {
+            print("no currDate or currSuggestedDate recieved at OptionsTableViewController")
+            return
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

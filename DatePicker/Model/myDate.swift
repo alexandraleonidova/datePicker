@@ -16,8 +16,7 @@ struct myDate{
     
     var geoLocationSet: Bool
     
-    //MAY BE ALL INTS?
-    var lattitude: Double?
-    var longtitude: Double?
+    var lattitude: String
+    var longtitude: String
     var address: String?
 }

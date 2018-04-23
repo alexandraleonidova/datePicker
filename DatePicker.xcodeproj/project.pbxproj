@@ -13,6 +13,10 @@
 		BB1D4889207EAD6700E9498B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB1D4887207EAD6700E9498B /* Main.storyboard */; };
 		BB1D488B207EAD6700E9498B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB1D488A207EAD6700E9498B /* Assets.xcassets */; };
 		BB1D488E207EAD6700E9498B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB1D488C207EAD6700E9498B /* LaunchScreen.storyboard */; };
+		BB46C844208AB5230041C85D /* URL+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB46C843208AB5230041C85D /* URL+Helpers.swift */; };
+		BB46C846208AB58D0041C85D /* YelpAPIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB46C845208AB58D0041C85D /* YelpAPIController.swift */; };
+		BB46C848208C387B0041C85D /* YelpBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB46C847208C387B0041C85D /* YelpBusiness.swift */; };
+		BB46C84A208C4C450041C85D /* SuggestedDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB46C849208C4C450041C85D /* SuggestedDate.swift */; };
 		BBAE6CEE20869DD20053E1DE /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAE6CED20869DD20053E1DE /* MainScreenViewController.swift */; };
 		BBAE6CF02086B0530053E1DE /* ChooseCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAE6CEF2086B0530053E1DE /* ChooseCategoryViewController.swift */; };
 		BBAE6CF22087190F0053E1DE /* APICallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAE6CF12087190F0053E1DE /* APICallViewController.swift */; };
@@ -31,6 +35,10 @@
 		BB1D488A207EAD6700E9498B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB1D488D207EAD6700E9498B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB1D488F207EAD6700E9498B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB46C843208AB5230041C85D /* URL+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Helpers.swift"; sourceTree = "<group>"; };
+		BB46C845208AB58D0041C85D /* YelpAPIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpAPIController.swift; sourceTree = "<group>"; };
+		BB46C847208C387B0041C85D /* YelpBusiness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpBusiness.swift; sourceTree = "<group>"; };
+		BB46C849208C4C450041C85D /* SuggestedDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedDate.swift; sourceTree = "<group>"; };
 		BBAE6CED20869DD20053E1DE /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		BBAE6CEF2086B0530053E1DE /* ChooseCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCategoryViewController.swift; sourceTree = "<group>"; };
 		BBAE6CF12087190F0053E1DE /* APICallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICallViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +80,8 @@
 			children = (
 				BB1D4883207EAD6700E9498B /* AppDelegate.swift */,
 				BB1D4885207EAD6700E9498B /* ViewController.swift */,
+				BB46C845208AB58D0041C85D /* YelpAPIController.swift */,
+				BB46C843208AB5230041C85D /* URL+Helpers.swift */,
 				BB1D4887207EAD6700E9498B /* Main.storyboard */,
 				BBAE6CF720871CA90053E1DE /* Model */,
 				BBAE6CF820871CC50053E1DE /* Controller */,
@@ -87,6 +97,8 @@
 			children = (
 				BBAE6CF32087193A0053E1DE /* myDate.swift */,
 				BBAE6CF5208719A10053E1DE /* DateItem.swift */,
+				BB46C847208C387B0041C85D /* YelpBusiness.swift */,
+				BB46C849208C4C450041C85D /* SuggestedDate.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -181,9 +193,13 @@
 				BBAE6CF22087190F0053E1DE /* APICallViewController.swift in Sources */,
 				BBAE6CF42087193A0053E1DE /* myDate.swift in Sources */,
 				BBAE6CEE20869DD20053E1DE /* MainScreenViewController.swift in Sources */,
+				BB46C84A208C4C450041C85D /* SuggestedDate.swift in Sources */,
 				BBAE6CFA20871D590053E1DE /* SetDetailsViewController.swift in Sources */,
+				BB46C848208C387B0041C85D /* YelpBusiness.swift in Sources */,
+				BB46C846208AB58D0041C85D /* YelpAPIController.swift in Sources */,
 				BBAE6CF02086B0530053E1DE /* ChooseCategoryViewController.swift in Sources */,
 				BB1D4884207EAD6700E9498B /* AppDelegate.swift in Sources */,
+				BB46C844208AB5230041C85D /* URL+Helpers.swift in Sources */,
 				BBAE6CF6208719A20053E1DE /* DateItem.swift in Sources */,
 				926684992085217E00383E72 /* FinalSelectionTableViewCell.swift in Sources */,
 			);
