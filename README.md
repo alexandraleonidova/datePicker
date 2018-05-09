@@ -24,4 +24,4 @@ Open DatePicker in Finder. In your DatePicker folder double click on the white `
 
 `Command + R` to build and run or press play button on the top left corner. Make sure you either connect your phone to Xcode or choose one of the simulator devices.
 
-If you have any issues, please refer to the following [Stack Overflow post] (https://stackoverflow.com/questions/20755044/how-to-install-cocoapods).
+If you have any issues, please refer to the following [Stack Overflow post](https://stackoverflow.com/questions/20755044/how-to-install-cocoapods).
