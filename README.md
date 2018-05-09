@@ -1,6 +1,7 @@
 # Date Picker
 
 Date Planning Assistant CS Mobile App Development (COMP 495 @ USD)
+This application takes in user input regarding what kind of aspects they want in a date(an activity, a meal, nightlife) as well as interests within each of the aspets. A call to Yelp's API with this input is made to produce possible date locations. Then with the response, the application displays both a date with the shortest straightline distance and up to three other choices for each aspect of the date. The user then has the choice between choising the shortest date or individual aspects from the given choices. The chosen date details including location(map), name, rating, and price is then finally displayed to the user. 
 
 ## Getting Started
 
