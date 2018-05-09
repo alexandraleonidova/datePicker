@@ -4,7 +4,7 @@ Date Planning Assistant CS Mobile App Development (COMP 495 @ USD)
 
 How to install + run
 
-In your Xcode project, pull from develop.
+In your Xcode project, pull from master.
 
 Open terminal (Command + Space, then search for "terminal").
 
