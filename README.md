@@ -12,11 +12,13 @@ Open terminal (`Command + Space`, then search for "terminal").
 
 Install `CocoaPods` using the following commands:
 
-`sudo gem install cocoapods`
+```
+sudo gem install cocoapods
 
-`pod setup`
+pod setup
 
-`pod install`
+pod install
+```
 
 Wait for the installation to finish (might take several minutes), then quit Xcode.
 
