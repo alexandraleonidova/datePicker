@@ -9,7 +9,8 @@
 import UIKit
 
 class DateDetailsTableViewController: UITableViewController {
-
+    var pickedDate: [YelpBusiness]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
