@@ -15,7 +15,7 @@ struct SuggestedDate{
     
     var firstCategory: String
     var secondCategory: String?
-    var thirdCategoty: String?
+    var thirdCategory: String?
     
     var firstDateItemSuggestionSet: Bool{
         return firstDateItemSuggestions != nil

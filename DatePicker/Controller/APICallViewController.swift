@@ -233,10 +233,10 @@ class APICallViewController: UIViewController {
                     successFlag = true
                     switch mainPos{
                         case 0:
-                            self.currSuggestedDate = SuggestedDate(firstDateItemSuggestions: retrievedBusinesses, secondDateItemSuggestions: nil, thirdDateItemSuggestions: nil, firstCategory: self.currDate!.mainCategories[0], secondCategory: nil, thirdCategoty: nil)
+                            self.currSuggestedDate = SuggestedDate(firstDateItemSuggestions: retrievedBusinesses, secondDateItemSuggestions: nil, thirdDateItemSuggestions: nil, firstCategory: self.currDate!.mainCategories[0], secondCategory: nil, thirdCategory: nil)
                         case 1:
                             if self.currSuggestedDate == nil{
-                                self.currSuggestedDate = SuggestedDate(firstDateItemSuggestions: retrievedBusinesses, secondDateItemSuggestions: nil, thirdDateItemSuggestions: nil, firstCategory: self.currDate!.mainCategories[1], secondCategory: nil, thirdCategoty: nil)
+                                self.currSuggestedDate = SuggestedDate(firstDateItemSuggestions: retrievedBusinesses, secondDateItemSuggestions: nil, thirdDateItemSuggestions: nil, firstCategory: self.currDate!.mainCategories[1], secondCategory: nil, thirdCategory: nil)
                             } else {
                                 self.currSuggestedDate!.secondDateItemSuggestions = retrievedBusinesses
                                 self.currSuggestedDate!.secondCategory = self.currDate!.mainCategories[1]
@@ -244,11 +244,11 @@ class APICallViewController: UIViewController {
                             }
                         case 2:
                             if self.currSuggestedDate == nil{
-                                self.currSuggestedDate = SuggestedDate(firstDateItemSuggestions: retrievedBusinesses, secondDateItemSuggestions: nil, thirdDateItemSuggestions: nil, firstCategory: self.currDate!.mainCategories[2], secondCategory: nil, thirdCategoty: nil)
+                                self.currSuggestedDate = SuggestedDate(firstDateItemSuggestions: retrievedBusinesses, secondDateItemSuggestions: nil, thirdDateItemSuggestions: nil, firstCategory: self.currDate!.mainCategories[2], secondCategory: nil, thirdCategory: nil)
                             } else {
                                 if self.currSuggestedDate!.secondDateItemSuggestionSet{
                                     self.currSuggestedDate?.thirdDateItemSuggestions = retrievedBusinesses
-                                    self.currSuggestedDate!.thirdCategoty = self.currDate!.mainCategories[2]
+                                    self.currSuggestedDate!.thirdCategory = self.currDate!.mainCategories[2]
                                 } else {
                                     self.currSuggestedDate?.secondDateItemSuggestions = retrievedBusinesses
                                     self.currSuggestedDate!.secondCategory = self.currDate!.mainCategories[2]
