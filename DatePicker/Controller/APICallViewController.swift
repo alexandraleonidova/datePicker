@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftSpinner
 
 class APICallViewController: UIViewController {
     
@@ -140,12 +141,17 @@ class APICallViewController: UIViewController {
                                     ]
 
     override func viewDidLoad() {
-        super.viewDidLoad()
         guard currDate != nil else {
             fatalError("APICallViewController did not recieve myDate object")
         }
-
-        gatherBusinessesData()
+        super.viewDidLoad()
+        
+        SwiftSpinner.show("Generating Report...")
+        
+        DispatchQueue.global(qos: .utility).async {
+            self.gatherBusinessesData()
+            SwiftSpinner.hide()
+        }
     }
 
     override func didReceiveMemoryWarning() {

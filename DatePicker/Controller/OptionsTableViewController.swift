@@ -480,6 +480,7 @@ class OptionsTableViewController: UITableViewController {
             
             let dateDetailsController = segue.destination as! DateDetailsTableViewController
             dateDetailsController.pickedDate = pickedDate
+            dateDetailsController.currDate = currDate
         }
     }
     
