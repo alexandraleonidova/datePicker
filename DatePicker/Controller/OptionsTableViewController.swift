@@ -2,7 +2,7 @@
 //  OptionsTableViewController.swift
 //  DatePicker
 //
-//  Created by Alexandra Leonidova on 4/17/18.
+//  Created by Alexandra Leonidova and Taylor Coury on 4/17/18.
 //  Copyright © 2018 Alexandra Leonidova. All rights reserved.
 //
 
@@ -43,6 +43,7 @@ class OptionsTableViewController: UITableViewController {
     @IBOutlet weak var thirdButton2: UIButton!
     @IBOutlet weak var thirdButton3: UIButton!
     
+    @IBOutlet weak var doneBarButton: UIBarButtonItem!
     
     var currDate: myDate?
     var currSuggestedDate: SuggestedDate?
@@ -61,6 +62,12 @@ class OptionsTableViewController: UITableViewController {
     var shortestDate: SuggestedDate?
     var topSuggestedDate: SuggestedDate?
 
+    override func viewWillAppear(_ animated: Bool) {
+        updateDoneButtonState()
+        if doneBarButton.isEnabled{
+            doneBarButton.tintColor = UIColor.blue
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -75,6 +82,7 @@ class OptionsTableViewController: UITableViewController {
         if currSuggestedDate!.thirdCategory == nil {
             noThirdItem = true
         }
+        
         //find the date with the shortest distance
         shortestDate = findShortestDistance(currSuggestedDate: currSuggestedDate!)
         
@@ -95,16 +103,12 @@ class OptionsTableViewController: UITableViewController {
         
         loadTopSuggestions(topSuggestedDate: topSuggestedDate!)
         loadShortestDate(shortestDate: shortestDate!)
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        updateDoneButtonState()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
@@ -159,6 +163,8 @@ class OptionsTableViewController: UITableViewController {
         } else if !noSecondItem {
             pickedSecondItem = shortestDate!.secondDateItemSuggestions![0]
         }
+        
+        updateDoneButtonState()
     }
     
     
@@ -184,6 +190,8 @@ class OptionsTableViewController: UITableViewController {
         default:
             break
         }
+        
+        updateDoneButtonState()
     }
     
     
@@ -209,6 +217,8 @@ class OptionsTableViewController: UITableViewController {
         default:
             break
         }
+        
+        updateDoneButtonState()
     }
     
     
@@ -234,6 +244,8 @@ class OptionsTableViewController: UITableViewController {
         default:
             break
         }
+        
+        updateDoneButtonState()
     }
     
     func findShortestDistance(currSuggestedDate: SuggestedDate) -> SuggestedDate {
@@ -414,51 +426,31 @@ class OptionsTableViewController: UITableViewController {
         }
     }
     
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+    func updateDoneButtonState() {
+        var enableFlag = false
+        
+        var targetVal = currDate!.mainCategories.count
+        var selectedCount = 0
+        
+        if shortestButton.isSelected{
+            enableFlag = true
+        } else {
+            if firstButton1.isSelected || firstButton2.isSelected || firstButton3.isSelected{
+                selectedCount += 1
+            }
+            if secondButton1.isSelected || secondButton2.isSelected || secondButton3.isSelected{
+                selectedCount += 1
+            }
+            if thirdButton1.isSelected || thirdButton2.isSelected || thirdButton3.isSelected{
+                selectedCount += 1
+            }
+            if selectedCount == targetVal{
+                enableFlag = true
+            }
+        }
+        
+        doneBarButton.isEnabled = enableFlag
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
     
     // MARK: - Navigation
 

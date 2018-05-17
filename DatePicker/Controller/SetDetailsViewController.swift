@@ -2,7 +2,7 @@
 //  SetDetailsViewController.swift
 //  DatePicker
 //
-//  Created by Alexandra Leonidova on 4/17/18.
+//  Created by Alexandra Leonidova and Taylor Coury on 4/17/18.
 //  Copyright © 2018 Alexandra Leonidova. All rights reserved.
 //
 
@@ -53,7 +53,6 @@ class SetDetailsViewController: UIViewController, UIPickerViewDataSource, UIPick
     }
     
     //target categories arrays
-    //TODO - move it to a model (and create model)
     var activeLifeOptions =    ["-",
                                 "Airsoft",
                                 "Archery",

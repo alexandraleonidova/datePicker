@@ -2,7 +2,7 @@
 //  DateDetailsTableViewController.swift
 //  DatePicker
 //
-//  Created by Alexandra Leonidova on 4/23/18.
+//  Created by Alexandra Leonidova and Taylor Coury on 4/23/18.
 //  Copyright © 2018 Alexandra Leonidova. All rights reserved.
 //
 
@@ -17,6 +17,40 @@ class DateDetailsTableViewController: UITableViewController {
     @IBOutlet weak var dateMap: MKMapView!
     @IBOutlet weak var dateMapSegmentedControl: UISegmentedControl!
     
+    @IBOutlet weak var section1NameLabel: UILabel!
+    @IBOutlet weak var section1raitingLabel: UILabel!
+    @IBOutlet weak var section1CostLabel: UILabel!
+    @IBOutlet weak var section1Address1: UILabel!
+    @IBOutlet weak var section1Address2: UILabel!
+    @IBOutlet weak var section1LinkButton: UIButton!
+    @IBAction func section1LinkButtonTapped(_ sender: UIButton) {
+        UIApplication.shared.openURL(NSURL(string: pickedDate![0].url)! as URL)
+    }
+    
+    
+    @IBOutlet weak var section1imageView: UIImageView!
+    
+    @IBOutlet weak var section2NameLabel: UILabel!
+    @IBOutlet weak var section2raitingLabel: UILabel!
+    @IBOutlet weak var section2CostLabel: UILabel!
+    @IBOutlet weak var section2Address1: UILabel!
+    @IBOutlet weak var section2Address2: UILabel!
+    @IBOutlet weak var section2imageView: UIImageView!
+    @IBAction func section2LinkButtonTapped(_ sender: UIButton) {
+        UIApplication.shared.openURL(NSURL(string: pickedDate![1].url)! as URL)
+    }
+    
+    
+    @IBOutlet weak var section3NameLabel: UILabel!
+    @IBOutlet weak var section3raitingLabel: UILabel!
+    @IBOutlet weak var section3CostLabel: UILabel!
+    @IBOutlet weak var section3Address1: UILabel!
+    @IBOutlet weak var section3Address2: UILabel!
+    @IBOutlet weak var section3imageView: UIImageView!
+    @IBAction func section3LinkButtonTapped(_ sender: UIButton) {
+        UIApplication.shared.openURL(NSURL(string: pickedDate![2].url)! as URL)
+    }
+    
     @IBAction func dateMapSegmentedControlPressed(_ sender: UISegmentedControl) {
         var index: Int
         
@@ -25,6 +59,11 @@ class DateDetailsTableViewController: UITableViewController {
         } else {
             index = sender.selectedSegmentIndex
         }
+        
+        if index < 0{
+            index = 0
+        }
+        
         let initialLocation = CLLocation(latitude: pickedDate![index].latitude,
                                      longitude: pickedDate![index].longitude)
         centerMapOnLocation(location: initialLocation)
@@ -64,6 +103,7 @@ class DateDetailsTableViewController: UITableViewController {
             let currDate = currDate
             else { return }
         
+        //working with map
         setUpSegmentedControl()
         var initialLocation: CLLocation
         
@@ -78,16 +118,18 @@ class DateDetailsTableViewController: UITableViewController {
         centerMapOnLocation(location: initialLocation)
         addAnnotations()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        //working with date details
+        setupFirstDateSection()
+        if pickedDate.count > 1{
+            setupSecondDateSection()
+            if pickedDate.count > 2{
+                setupThirdDateSection()
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
@@ -100,26 +142,28 @@ class DateDetailsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         let numItems = pickedDate!.count
+
         switch section {
-        case 0:
+        case 0: //map
+            return 2
+        case 1: //1st item
             return 5
-        case 1:
+        case 2: ////2nd item
             if numItems > 1 {
                 return 5
             } else {
-                return 1
+                return 0
             }
-        case 2:
+        case 3: //3rd item
             if numItems > 2 {
                 return 5
             } else {
-                return 1
+                return 0
             }
-        case 3: 
-            return 2
         default:
             return 0
         }
+        
     }
 
     let regionRadius: CLLocationDistance = 5000
@@ -144,7 +188,6 @@ class DateDetailsTableViewController: UITableViewController {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
     }
     
     func addAnnotations(){
@@ -178,59 +221,93 @@ class DateDetailsTableViewController: UITableViewController {
         }
     }
     
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+    
+    func getDataFromUrl(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            completion(data, response, error)
+            }.resume()
     }
-    */
+    
+    func setupFirstDateSection(){
+        guard let currPickedDate = pickedDate?[0] else { return }
+        section1NameLabel.text = currPickedDate.name
+        section1raitingLabel.text = String(currPickedDate.rating)
+        section1CostLabel.text = currPickedDate.price
+        
+        if currPickedDate.display_address.count == 1{
+            section1Address1.text = currPickedDate.display_address[0]
+            section1Address2.text = ""
+        } else if currPickedDate.display_address.count == 2{
+            section1Address1.text = currPickedDate.display_address[0]
+            section1Address2.text = currPickedDate.display_address[1]
+        }
+        else {
+            section1Address1.text = "\(currPickedDate.display_address[0]), \(currPickedDate.display_address[1])"
+            section1Address2.text = currPickedDate.display_address[2]
+        }
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+        if let url = URL(string: currPickedDate.image_url) {
+            section1imageView.contentMode = .scaleAspectFill
+            getDataFromUrl(url: url) { data, response, error in
+                guard let data = data, error == nil else { return }
+                DispatchQueue.main.async() {
+                    self.section1imageView.image = UIImage(data: data)
+                }
+            }
+        }
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    func setupSecondDateSection(){
+        guard let currPickedDate = pickedDate?[1] else { return }
+        section2NameLabel.text = currPickedDate.name
+        section2raitingLabel.text = String(currPickedDate.rating)
+        section2CostLabel.text = currPickedDate.price
+        if currPickedDate.display_address.count == 1{
+            section2Address1.text = currPickedDate.display_address[0]
+            section2Address2.text = ""
+        } else if currPickedDate.display_address.count == 2{
+            section2Address1.text = currPickedDate.display_address[0]
+            section2Address2.text = currPickedDate.display_address[1]
+        }
+        else {
+            section2Address1.text = "\(currPickedDate.display_address[0]), \(currPickedDate.display_address[1])"
+            section2Address2.text = currPickedDate.display_address[2]
+        }
+        if let url = URL(string: currPickedDate.image_url) {
+            section2imageView.contentMode = .scaleAspectFill
+            getDataFromUrl(url: url) { data, response, error in
+                guard let data = data, error == nil else { return }
+                DispatchQueue.main.async() {
+                    self.section2imageView.image = UIImage(data: data)
+                }
+            }
+        }
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+    
+    func setupThirdDateSection(){
+        guard let currPickedDate = pickedDate?[2] else { return }
+        section3NameLabel.text = currPickedDate.name
+        section3raitingLabel.text = String(currPickedDate.rating)
+        section3CostLabel.text = currPickedDate.price
+        if currPickedDate.display_address.count == 1{
+            section3Address1.text = currPickedDate.display_address[0]
+            section3Address2.text = ""
+        } else if currPickedDate.display_address.count == 2{
+            section3Address1.text = currPickedDate.display_address[0]
+            section3Address2.text = currPickedDate.display_address[1]
+        }
+        else {
+            section3Address1.text = "\(currPickedDate.display_address[0]), \(currPickedDate.display_address[1])"
+            section3Address2.text = currPickedDate.display_address[2]
+        }
+        if let url = URL(string: currPickedDate.image_url) {
+            section3imageView.contentMode = .scaleAspectFill
+            getDataFromUrl(url: url) { data, response, error in
+                guard let data = data, error == nil else { return }
+                DispatchQueue.main.async() {
+                    self.section3imageView.image = UIImage(data: data)
+                }
+            }
+        }
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -2,7 +2,7 @@
 //  APICallViewController.swift
 //  DatePicker
 //
-//  Created by Alexandra Leonidova on 4/17/18.
+//  Created by Alexandra Leonidova and Taylor Coury on 4/17/18.
 //  Copyright © 2018 Alexandra Leonidova. All rights reserved.
 //
 
@@ -15,20 +15,11 @@ class APICallViewController: UIViewController {
     var currSuggestedDate: SuggestedDate?
 
     @IBAction func printStatus(_ sender: UIButton) {
-        print("********")
-        print("********")
-        print("********")
-
         print(currSuggestedDate)
         print("********")
         print(currSuggestedDate)
-        
-        print("********")
-        print("********")
-        print("********")
-
-
     }
+    
     let categoriesDictionary =     ["Airsoft" : "airsoft",
                                     "Archery" : "archery",
                                     "Amusement Parks" : "amusementparks",
@@ -281,7 +272,6 @@ class APICallViewController: UIViewController {
      * @return businesses - array of YelrBusiness obtained from apiResponse
      */
     func retrieveBusinessDataFromAPI(apiResponse: AnyObject) -> [YelpBusiness]{
-        print(apiResponse)
         var businesses: [YelpBusiness] = []
         let results = apiResponse as! [AnyObject]
         for result in results {

@@ -2,7 +2,7 @@
 //  ChooseCategoryViewController.swift
 //  DatePicker
 //
-//  Created by Alexandra Leonidova on 4/17/18.
+//  Created by Alexandra Leonidova and Taylor Coury on 4/17/18.
 //  Copyright © 2018 Alexandra Leonidova. All rights reserved.
 //
 
@@ -62,17 +62,12 @@ class ChooseCategoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //TODO: if chooseCurrentLocation == true => get geolocation (Alex)
-        
-        print("Loaded ChooseCategoryViewController")
 
-        // Do any additional setup after loading the view.
         updateUI()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func updateUI(){
@@ -112,7 +107,6 @@ class ChooseCategoryViewController: UIViewController {
     }
     
     @IBAction func unwindChooseCategory(unwindSegue: UIStoryboardSegue) {
-        print("unwinded to ChooseCategoryViewController")
         guard let setDetailsViewController = unwindSegue.source as? SetDetailsViewController, let recievedDate = setDetailsViewController.currDate, choiseIndex < recievedDate.mainCategories.count
             else { return }
         currDate = recievedDate

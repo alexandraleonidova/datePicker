@@ -2,7 +2,7 @@
 //  MainScreenViewController.swift
 //  DatePicker
 //
-//  Created by Alexandra Leonidova on 4/17/18.
+//  Created by Alexandra Leonidova and Taylor Coury on 4/17/18.
 //  Copyright © 2018 Alexandra Leonidova. All rights reserved.
 //
 
@@ -129,22 +129,20 @@ class MainScreenViewController: UIViewController, UIPickerViewDataSource, UIPick
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
     }
     
     // MARK: - Navigation
+    
+    @IBAction func unwindToMainScreen(unwindSegue: UIStoryboardSegue) {
+        firstSelectionPicker.selectRow(0, inComponent: 0, animated: true)
+        secondSelectionPicker.selectRow(0, inComponent: 0, animated: true)
+        thirdSelectionPicker.selectRow(0, inComponent: 0, animated: true)
+
+
+    }
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        //TODO: move this to block segue if parameters are bad
-        /*
-        guard firstMainCategoryPicked.count > 1 || secondMainCategoryPicked.count > 1 || thirdMainCategoryPicked.count > 1 else
-        { return }
-        
-        guard useCurrentLocationButton.isSelected || addressTextField.text?.count == 5 else
-        { return }
-        */
         
         if segue.identifier == "mainScreenSegue" {
             let chooseCategoryViewController = segue.destination as! ChooseCategoryViewController
@@ -160,7 +158,6 @@ class MainScreenViewController: UIViewController, UIPickerViewDataSource, UIPick
                 mainCategoriesArray.append(thirdMainCategoryPicked)
             }
             
-            //TODO: add address and geolocation when becomes applicable
             let currDate = myDate(mainCategories: mainCategoriesArray, subCategories: [], dateItemsArray: [], geoLocationSet: useCurrentLocationButton.isSelected, lattitude: lattitude, longtitude: longtitute, address: addressTextField.text)
             
             chooseCategoryViewController.currDate = currDate
