@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		790AA387917C729E6A64A3EA /* Pods_DatePicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1718CDF800DD12616586B0C /* Pods_DatePicker.framework */; };
 		926684992085217E00383E72 /* FinalSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926684982085217E00383E72 /* FinalSelectionTableViewCell.swift */; };
 		BB1D4884207EAD6700E9498B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1D4883207EAD6700E9498B /* AppDelegate.swift */; };
 		BB1D4886207EAD6700E9498B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1D4885207EAD6700E9498B /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		41A268ED046964EE313DBD54 /* Pods-DatePicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DatePicker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DatePicker/Pods-DatePicker.debug.xcconfig"; sourceTree = "<group>"; };
 		926684982085217E00383E72 /* FinalSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalSelectionTableViewCell.swift; sourceTree = "<group>"; };
 		BB1D4880207EAD6700E9498B /* DatePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DatePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB1D4883207EAD6700E9498B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +50,8 @@
 		BBAE6CF5208719A10053E1DE /* DateItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateItem.swift; sourceTree = "<group>"; };
 		BBAE6CF920871D590053E1DE /* SetDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetDetailsViewController.swift; sourceTree = "<group>"; };
 		BBAE6CFB20871E850053E1DE /* OptionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsTableViewController.swift; sourceTree = "<group>"; };
+		E8A8E75F4224B774D95C9366 /* Pods-DatePicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DatePicker.release.xcconfig"; path = "Pods/Target Support Files/Pods-DatePicker/Pods-DatePicker.release.xcconfig"; sourceTree = "<group>"; };
+		F1718CDF800DD12616586B0C /* Pods_DatePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DatePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,17 +59,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				790AA387917C729E6A64A3EA /* Pods_DatePicker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		690B20980777EADF036E567E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F1718CDF800DD12616586B0C /* Pods_DatePicker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BB1D4877207EAD6700E9498B = {
 			isa = PBXGroup;
 			children = (
 				BB1D4882207EAD6700E9498B /* DatePicker */,
 				BB1D4881207EAD6700E9498B /* Products */,
+				ED1BC0F4225AD32A45395109 /* Pods */,
+				690B20980777EADF036E567E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,6 +103,7 @@
 				BBAE6CF720871CA90053E1DE /* Model */,
 				BBAE6CF820871CC50053E1DE /* Controller */,
 				BB1D488A207EAD6700E9498B /* Assets.xcassets */,
+				926684982085217E00383E72 /* FinalSelectionTableViewCell.swift */,
 				BB1D488C207EAD6700E9498B /* LaunchScreen.storyboard */,
 				BB1D488F207EAD6700E9498B /* Info.plist */,
 			);
@@ -114,9 +130,17 @@
 				BBAE6CF12087190F0053E1DE /* APICallViewController.swift */,
 				BBAE6CFB20871E850053E1DE /* OptionsTableViewController.swift */,
 				BB29D1A0208E57E4005E214B /* DateDetailsTableViewController.swift */,
-				926684982085217E00383E72 /* FinalSelectionTableViewCell.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		ED1BC0F4225AD32A45395109 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				41A268ED046964EE313DBD54 /* Pods-DatePicker.debug.xcconfig */,
+				E8A8E75F4224B774D95C9366 /* Pods-DatePicker.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,9 +150,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BB1D4892207EAD6700E9498B /* Build configuration list for PBXNativeTarget "DatePicker" */;
 			buildPhases = (
+				397927FBDF0B7E4A634C8941 /* [CP] Check Pods Manifest.lock */,
 				BB1D487C207EAD6700E9498B /* Sources */,
 				BB1D487D207EAD6700E9498B /* Frameworks */,
 				BB1D487E207EAD6700E9498B /* Resources */,
+				297DD76627916AE6FA77258A /* [CP] Embed Pods Frameworks */,
+				70D61FF0E01D9CC35087D84F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -185,6 +212,62 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		297DD76627916AE6FA77258A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DatePicker/Pods-DatePicker-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftSpinner/SwiftSpinner.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSpinner.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DatePicker/Pods-DatePicker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		397927FBDF0B7E4A634C8941 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DatePicker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		70D61FF0E01D9CC35087D84F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DatePicker/Pods-DatePicker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BB1D487C207EAD6700E9498B /* Sources */ = {
@@ -340,6 +423,7 @@
 		};
 		BB1D4893207EAD6700E9498B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41A268ED046964EE313DBD54 /* Pods-DatePicker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -355,6 +439,7 @@
 		};
 		BB1D4894207EAD6700E9498B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8A8E75F4224B774D95C9366 /* Pods-DatePicker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

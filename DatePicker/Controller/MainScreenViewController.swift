@@ -90,10 +90,17 @@ class MainScreenViewController: UIViewController, UIPickerViewDataSource, UIPick
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        //reset geolocation button
+        useCurrentLocationButton.isSelected = false
+        let image = UIImage(named: "Unchecked")
+        useCurrentLocationButton.setBackgroundImage(image, for: .normal)
+        enterAddressStack.isHidden = false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         self.firstSelectionPicker.dataSource = self;
         self.firstSelectionPicker.delegate = self;
         self.secondSelectionPicker.dataSource = self;
@@ -137,7 +144,18 @@ class MainScreenViewController: UIViewController, UIPickerViewDataSource, UIPick
         firstSelectionPicker.selectRow(0, inComponent: 0, animated: true)
         secondSelectionPicker.selectRow(0, inComponent: 0, animated: true)
         thirdSelectionPicker.selectRow(0, inComponent: 0, animated: true)
-
+        locationPermitted = false
+        geoCoordinatesSet = false
+        lattitude = ""
+        longtitute = ""
+        
+        //picker view related data and functions
+        // Tag 1 is First Picker
+        // Tag 2 is Secon Picker
+        // Tag 3 is Third Picker
+        firstMainCategoryPicked = ""
+        secondMainCategoryPicked = ""
+        thirdMainCategoryPicked = ""
 
     }
 

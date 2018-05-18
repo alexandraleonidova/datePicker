@@ -7,4 +7,5 @@ target 'DatePicker' do
 
   # Pods for DatePicker
   pod "SwiftSpinner"
+  pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
 end
