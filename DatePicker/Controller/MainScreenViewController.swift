@@ -9,8 +9,9 @@
 import UIKit
 import CoreLocation
 
-class MainScreenViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, CLLocationManagerDelegate {
+class MainScreenViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, CLLocationManagerDelegate, UITextFieldDelegate{
     
+    @IBOutlet weak var mainScrollView: UIScrollView!
     @IBOutlet weak var enterAddressStack: UIStackView!
     @IBOutlet weak var firstSelectionPicker: UIPickerView!
     @IBOutlet weak var thirdSelectionPicker: UIPickerView!
@@ -100,7 +101,9 @@ class MainScreenViewController: UIViewController, UIPickerViewDataSource, UIPick
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        addressTextField.delegate = self
+        registerForKeyboardNotifications()
+        
         self.firstSelectionPicker.dataSource = self;
         self.firstSelectionPicker.delegate = self;
         self.secondSelectionPicker.dataSource = self;
@@ -108,6 +111,36 @@ class MainScreenViewController: UIViewController, UIPickerViewDataSource, UIPick
         self.thirdSelectionPicker.dataSource = self;
         self.thirdSelectionPicker.delegate = self;
     }
+    
+    func registerForKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector:
+            #selector(keyboardWasShown(_:)), name: .UIKeyboardDidShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector:
+            #selector(keyboardWillBeHidden(_:)), name: .UIKeyboardWillHide, object: nil)
+
+    }
+    
+    @objc func keyboardWasShown(_ notificiation: NSNotification) {
+        guard let info = notificiation.userInfo,
+            let keyboardFrameValue =
+            info[UIKeyboardFrameBeginUserInfoKey] as? NSValue
+            else { return }
+
+        let keyboardFrame = keyboardFrameValue.cgRectValue
+        let keyboardSize = keyboardFrame.size
+
+        let contentInsets = UIEdgeInsetsMake(0.0, 0.0,
+                                             keyboardSize.height, 0.0)
+        mainScrollView.contentInset = contentInsets
+        mainScrollView.scrollIndicatorInsets = contentInsets
+    }
+    
+    @objc func keyboardWillBeHidden(_ notification: NSNotification) {
+        let contentInsets = UIEdgeInsets.zero
+        mainScrollView.contentInset = contentInsets
+        mainScrollView.scrollIndicatorInsets = contentInsets
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
